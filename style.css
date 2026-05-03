@@ -1,45 +1,35 @@
-/* ПОВНЕ ВИПРАВЛЕННЯ: все по центру, біле і в стовпчик */
-.banner__link, 
-.banner__instagram, 
-.banner__phones a, 
-a {
-  color: #ffffff !important;
-  text-decoration: none !important;
-  display: block !important;
-  margin: 0 auto 15px auto;      /* Центрування + відступ знизу */
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;            /* Текст всередині тега по центру */
-  width: fit-content;            /* Щоб фон не розтягувався на весь екран */
+/* Скидання налаштувань */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Додатковий стиль суто для Інстаграму */
-.banner__instagram {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 15px 25px;
-  border-radius: 15px;
-  font-size: 26px;
-  margin-top: 10px;
-  width: 90%;                    /* Обмежуємо ширину для мобілок */
-  max-width: 600px;
-}
-
-.banner {
-  width: 1080px;
-  height: 1920px;
-  position: relative;
-  overflow: hidden;
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
   font-family: Arial, sans-serif;
+}
+
+/* Основний контейнер тепер підлаштовується під екран */
+.banner {
+  width: 100%;
+  min-height: 100vh; /* На всю висоту екрана телефону */
+  position: relative;
   display: flex;
-  flex-direction: column;        /* Вирівнювання в колонку */
-  align-items: center;           /* Центрування вмісту по горизонталі */
+  flex-direction: column;
+  align-items: center;
+  background: #000;
 }
 
 .banner__image {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Фото заповнює фон без деформації */
   z-index: 1;
 }
 
@@ -47,76 +37,100 @@ a {
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 100%;
-  padding: 40px;
+  min-height: 100vh;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;           /* ГОЛОВНЕ: все всередині по центру */
-  justify-content: flex-start;
-  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%);
+  align-items: center;
+  /* Темний градієнт зверху і знизу для читабельності тексту */
+  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.8) 100%);
 }
 
+/* Прайс-лист: тепер він займає 90% ширини телефону */
 .banner__services-list {
-  width: 95%;
-  max-width: 900px;
-  background: rgba(255, 255, 255, 0.8);
+  width: 90%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
-  border-radius: 25px;
-  padding: 25px;
+  border-radius: 20px;
+  padding: 20px;
   list-style: none;
-  margin: 20px auto;             /* Центрування блока прайсу */
+  margin-top: 20px;
 }
 
 .banner__service-item {
   display: flex;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: 10px 0;
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-.banner__service-name { font-size: 28px; color: #000; font-weight: 600; }
-.banner__service-price { font-size: 32px; color: #000; font-weight: 800; }
+.banner__service-name { font-size: 18px; color: #000; font-weight: 600; }
+.banner__service-price { font-size: 20px; color: #000; font-weight: 800; }
 
+/* Чорна плашка з датою */
 .banner__badge--highlight {
   background: #000;
   color: #fff;
-  padding: 15px 40px;
+  padding: 12px 25px;
   border-radius: 50px;
-  font-size: 30px;
+  font-size: 16px;
   font-weight: bold;
-  margin: 0 auto auto auto;      /* Центрування плашки */
+  margin: 15px 0 auto 0; /* Штовхає все інше вниз */
   text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
+/* Футер з контактами */
 .banner__footer {
-  text-align: center;
   width: 100%;
-  padding-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;           /* Центрування футера */
+  text-align: center;
+  padding-bottom: 40px; /* Місце для кнопки Facebook у рекламі */
 }
 
 .banner__location-text {
-  font-size: 40px;
+  font-size: 24px;
   font-weight: bold;
   color: #fff;
-  margin-bottom: 10px;
-  text-align: center;
+  margin-bottom: 5px;
 }
 
-/* Стиль кнопки-посилання — ТЕЖ ПО ЦЕНТРУ */
-.banner__button-link {
-  display: block !important;
-  width: fit-content;
-  margin: 20px auto 0 auto;      /* ЦЕНТРУВАННЯ КНОПКИ */
-  background: #ffffff !important;
-  color: #000000 !important;
-  padding: 30px 100px;
-  font-size: 38px;
-  font-weight: 900;
-  border-radius: 100px;
-  text-transform: uppercase;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+.banner__location-note {
+  font-size: 14px;
+  color: #eee;
+  margin-bottom: 20px;
+}
+
+/* Посилання (номери та інстаграм) */
+.banner__link, .banner__instagram {
+  color: #fff !important;
   text-decoration: none !important;
+  display: block;
+  margin: 10px auto;
+  font-weight: bold;
+}
+
+.banner__link { font-size: 22px; }
+
+.banner__instagram {
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+/* Кнопка ЗАПИСАТИСЬ */
+.banner__button-link {
+  display: inline-block !important;
+  background: #fff !important;
+  color: #000 !important;
+  padding: 18px 50px;
+  font-size: 22px;
+  font-weight: 900;
+  border-radius: 50px;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  margin-top: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }

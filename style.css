@@ -1,27 +1,29 @@
-/* ПОВНЕ ВИПРАВЛЕННЯ: прибираємо синій колір і ставимо в стовпчик */
+/* ПОВНЕ ВИПРАВЛЕННЯ: все по центру, біле і в стовпчик */
 .banner__link, 
 .banner__instagram, 
 .banner__phones a, 
 a {
-  color: #ffffff !important;         /* Тільки білий колір */
-  text-decoration: none !important;  /* Без підкреслення */
-  display: block !important;         /* Кожне посилання з нового рядка */
-  margin-bottom: 15px;               /* Відступ між ними */
+  color: #ffffff !important;
+  text-decoration: none !important;
+  display: block !important;
+  margin: 0 auto 15px auto;      /* Центрування + відступ знизу */
   font-size: 30px;
   font-weight: bold;
-  text-align: center;
+  text-align: center;            /* Текст всередині тега по центру */
+  width: fit-content;            /* Щоб фон не розтягувався на весь екран */
 }
 
-/* Додатковий стиль суто для Інстаграму, щоб він виділявся */
+/* Додатковий стиль суто для Інстаграму */
 .banner__instagram {
   background: rgba(0, 0, 0, 0.4);
   padding: 15px 25px;
   border-radius: 15px;
   font-size: 26px;
   margin-top: 10px;
+  width: 90%;                    /* Обмежуємо ширину для мобілок */
+  max-width: 600px;
 }
 
-/* Основні налаштування банера (залишаємо як були) */
 .banner {
   width: 1080px;
   height: 1920px;
@@ -29,6 +31,8 @@ a {
   overflow: hidden;
   font-family: Arial, sans-serif;
   display: flex;
+  flex-direction: column;        /* Вирівнювання в колонку */
+  align-items: center;           /* Центрування вмісту по горизонталі */
 }
 
 .banner__image {
@@ -47,18 +51,20 @@ a {
   padding: 40px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;           /* ГОЛОВНЕ: все всередині по центру */
+  justify-content: flex-start;
   background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%);
 }
 
 .banner__services-list {
   width: 95%;
+  max-width: 900px;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   border-radius: 25px;
   padding: 25px;
   list-style: none;
-  margin-top: 20px;
+  margin: 20px auto;             /* Центрування блока прайсу */
 }
 
 .banner__service-item {
@@ -78,13 +84,17 @@ a {
   border-radius: 50px;
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: auto; 
+  margin: 0 auto auto auto;      /* Центрування плашки */
+  text-align: center;
 }
 
 .banner__footer {
   text-align: center;
   width: 100%;
   padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;           /* Центрування футера */
 }
 
 .banner__location-text {
@@ -92,28 +102,21 @@ a {
   font-weight: bold;
   color: #fff;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-/* Стиль кнопки-посилання */
+/* Стиль кнопки-посилання — ТЕЖ ПО ЦЕНТРУ */
 .banner__button-link {
-  display: inline-block !important; /* Робимо блоком, щоб працювали відступи */
+  display: block !important;
+  width: fit-content;
+  margin: 20px auto 0 auto;      /* ЦЕНТРУВАННЯ КНОПКИ */
   background: #ffffff !important;
-  color: #000000 !important;       /* Чорний текст на білій кнопці */
-  border: none;
+  color: #000000 !important;
   padding: 30px 100px;
   font-size: 38px;
   font-weight: 900;
   border-radius: 100px;
   text-transform: uppercase;
-  margin-top: 20px;
-  text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  cursor: pointer;
   text-decoration: none !important;
-}
-
-/* Ефект при натисканні (опціонально) */
-.banner__button-link:active {
-  transform: scale(0.95);
-  background: #f0f0f0 !important;
 }

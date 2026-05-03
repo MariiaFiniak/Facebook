@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
@@ -43,7 +44,13 @@ body, html {
   flex-direction: column;
   align-items: center;
   /* Темний градієнт зверху і знизу для читабельності тексту */
-  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.8) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0.2) 70%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 }
 
 /* Прайс-лист: тепер він займає 90% ширини телефону */
@@ -62,11 +69,19 @@ body, html {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.banner__service-name { font-size: 18px; color: #000; font-weight: 600; }
-.banner__service-price { font-size: 20px; color: #000; font-weight: 800; }
+.banner__service-name {
+  font-size: 18px;
+  color: #000;
+  font-weight: 600;
+}
+.banner__service-price {
+  font-size: 20px;
+  color: #000;
+  font-weight: 800;
+}
 
 /* Чорна плашка з датою */
 .banner__badge--highlight {
@@ -78,7 +93,7 @@ body, html {
   font-weight: bold;
   margin: 15px 0 auto 0; /* Штовхає все інше вниз */
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Футер з контактами */
@@ -102,7 +117,8 @@ body, html {
 }
 
 /* Посилання (номери та інстаграм) */
-.banner__link, .banner__instagram {
+.banner__link,
+.banner__instagram {
   color: #fff !important;
   text-decoration: none !important;
   display: block;
@@ -110,7 +126,9 @@ body, html {
   font-weight: bold;
 }
 
-.banner__link { font-size: 22px; }
+.banner__link {
+  font-size: 22px;
+}
 
 .banner__instagram {
   font-size: 16px;
@@ -134,8 +152,8 @@ body, html {
   border-radius: 50px;
   text-transform: uppercase;
   text-decoration: none !important;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
   /* Додаємо анімацію */
   animation: pulse 2s infinite;
   transition: transform 0.2s ease;
